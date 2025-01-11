@@ -6,6 +6,7 @@ import React from "react";
     <header className="my-16">
       <br />
       <Filters/>
+
       <section>{children}</section>
     </header>
   );

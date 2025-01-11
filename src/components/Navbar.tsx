@@ -12,12 +12,10 @@ const Navbar = () => {
   return (
     <nav className="bg-transparent fixed top-0 left-0 right-0 z-50 shadow-lg ">
       <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
         <div className="text-2xl font-semibold text-gray-800">
           <Link href="/">MiTienda</Link>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
           <Link
             href="/"
@@ -43,7 +41,6 @@ const Navbar = () => {
           >
             Contacto
           </Link>
-              {/* Carrito y Perfil Icon */}
           <div className="relative">
             <button className="text-gray-700 hover:text-blue-500 transition-colors duration-300">
               <i className="fas fa-shopping-cart"></i> {/* Add Cart Icon Here */}
@@ -51,7 +48,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Icon */}
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-gray-800 focus:outline-none">
             {isMobileMenuOpen ? (
@@ -63,7 +59,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg py-6 px-4 space-y-4">
           <Link

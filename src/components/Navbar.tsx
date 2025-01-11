@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { HiMenuAlt3, HiX, HiOutlineHeart } from 'react-icons/hi'; // Icons for hamburger and close
+import { HiMenuAlt3, HiX,  } from 'react-icons/hi'; 
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,7 +43,7 @@ const Navbar = () => {
           </Link>
           <div className="relative">
             <button className="text-gray-700 hover:text-blue-500 transition-colors duration-300">
-              <i className="fas fa-shopping-cart"></i> {/* Add Cart Icon Here */}
+              <i className="fas fa-shopping-cart"></i> 
             </button>
           </div>
         </div>

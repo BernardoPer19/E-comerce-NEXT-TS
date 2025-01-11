@@ -12,7 +12,6 @@ function Filters() {
     setOrderBy,
   } = useShopContext();
 
-  // Obtener el precio mínimo y máximo de los productos filtrados
 
   return (
     <div className="bg-white p-6 rounded-lg flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 space-x-0 md:space-x-6 mx-auto max-w-[1280px]">
@@ -31,7 +30,7 @@ function Filters() {
           <select
             name="category"
             id="category"
-            onChange={(e) => setCategory(e.target.value)} // Actualiza la categoría en el contexto
+            onChange={(e) => setCategory(e.target.value)} 
             className="p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={category}
           >
@@ -53,7 +52,7 @@ function Filters() {
           <select
             name="sortBy"
             id="sortBy"
-            onChange={(e) => setOrderBy(e.target.value)} // Actualiza el orden
+            onChange={(e) => setOrderBy(e.target.value)} 
             className="p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="default">Sin orden</option>
@@ -76,7 +75,7 @@ function Filters() {
             min={0.99}
             max={799.99}
             step="1" 
-            onChange={(e) => setPrice(Number(e.target.value))} // Actualiza el precio en el contexto
+            onChange={(e) => setPrice(Number(e.target.value))}
             className="w-full mt-1 p-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={price}
           />

@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 
 export const useFilters = (products: ProductType[]) => {
   const [category, setCategory] = useState<string>("");
-  const [price, setPrice] = useState<number>(1000);
+  const [price, setPrice] = useState<number>(800);
   const [orderBy, setOrderBy] = useState<string>("default");
 
   const filteredProducts = useMemo(() => {

@@ -2,6 +2,7 @@
 "use client";
 
 import { useShopContext } from '@/context/ShopContext';
+import Link from 'next/link';
 import { HiOutlineHeart, HiSearch } from 'react-icons/hi';
 
 const ProductList = () => {
@@ -37,7 +38,9 @@ const ProductList = () => {
                   <button className="w-[60%] bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Comprar ahora
                   </button>
+                  <Link href={`/products/${prod.id}`}>
                   <HiSearch size={30} color='#2563eb '/>
+                  </Link>
                   <HiOutlineHeart size={30} color='#ff0000'/>
                 </div>
               </div>

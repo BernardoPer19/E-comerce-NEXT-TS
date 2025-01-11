@@ -15,7 +15,7 @@ export interface ProductType {
     warrantyInformation:  string;
     shippingInformation:  string;
     availabilityStatus:   string;
-    reviews?:             Review[]; // Opcional si no siempre hay reseñas
+    reviews:             Review[]; // Opcional si no siempre hay reseñas
     returnPolicy:         string;
     minimumOrderQuantity: number;
     meta:                 Meta;

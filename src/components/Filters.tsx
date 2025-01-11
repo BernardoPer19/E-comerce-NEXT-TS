@@ -1,24 +1,18 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
 import { useShopContext } from '@/context/ShopContext';
 import SearchForm from './SearchForm';
-import { ProductType } from '@/types/ProdsTypes';
 
 function Filters() {
-  const { category, setCategory, price, setPrice, filteredProducts,setOrderBy } =
-    useShopContext();
-
-  
+  const {
+    category,
+    setCategory,
+    price,
+    setPrice,
+    setOrderBy,
+  } = useShopContext();
 
   // Obtener el precio mínimo y máximo de los productos filtrados
-  const minPrice = Math.min(...filteredProducts.map((prod) => prod.price), 0);
-  const maxPrice = Math.max(
-    ...filteredProducts.map((prod) => prod.price),
-    1000,
-  );
-
- 
 
   return (
     <div className="bg-white p-6 rounded-lg flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 space-x-0 md:space-x-6 mx-auto max-w-[1280px]">
@@ -73,20 +67,20 @@ function Filters() {
             htmlFor="price"
             className="text-sm font-semibold text-gray-600 mb-1"
           >
-            Precio: ${minPrice} - ${maxPrice}
+            Precio: $0,99 - 799.99
           </label>
           <input
             type="range"
             name="price"
             id="price"
-            min={minPrice}
-            max={maxPrice}
-            step="100"
+            min={0.99}
+            max={799.99}
+            step="1" 
             onChange={(e) => setPrice(Number(e.target.value))} // Actualiza el precio en el contexto
             className="w-full mt-1 p-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={price}
           />
-          {`>${price}`}
+          {`products >= ${price} `}
         </div>
       </div>
     </div>

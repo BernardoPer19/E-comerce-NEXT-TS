@@ -26,7 +26,7 @@ interface ProviderProps {
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 export const ShopContextProvider = ({ children }: ProviderProps) => {
-  const { error, loading, products } = useFetch(); // Obtener productos
+  const { error, loading, products } = useFetch(); 
   const [cartItems, setCartItems] = useState<ProductType[]>([]);
 
   // Uso del hook `useFilters` para obtener y manejar filtros

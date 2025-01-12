@@ -13,7 +13,6 @@ export const useFilters = (products: ProductType[]) => {
       return isCategoryMatch && isPriceMatch;
     });
 
-    // Aplicar orden después del filtrado
     switch (orderBy) {
       case 'asc':
         return [...filtered].sort((a, b) => a.price - b.price); 

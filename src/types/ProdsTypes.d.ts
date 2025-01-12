@@ -23,6 +23,10 @@ export interface ProductType {
     thumbnail:            string;
 }
 
+export type ProductForCart = Pick<ProductType, 'id' | 'title' | 'price' | 'thumbnail'> & {
+    quantity: number;
+  };
+
 export interface Dimensions {
     width:  number;
     height: number;

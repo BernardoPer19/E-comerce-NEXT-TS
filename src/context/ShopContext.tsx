@@ -1,15 +1,14 @@
-"use client";
-
-import React, { createContext, useContext, useState, ReactNode } from "react";
-import { useFetch } from "@/hooks/useFetchProds"; // Asumiendo que `useFetch` obtiene los productos
-import { ProductType } from "@/types/ProdsTypes";
-import { useFilters } from "@/hooks/useFilters";
+"use client"
+import React, { createContext, useContext, ReactNode } from 'react';
+import { useFetch } from '@/hooks/useFetchProds';
+import { ProductType } from '@/types/ProdsTypes';
+import { useFilters } from '@/hooks/useFilters';
+import useCart from '@/hooks/useCart';
+import { CartItem } from '@/types/CartType'; 
 
 interface ShopContextType {
   loading: boolean;
   error: boolean;
-  cartItems: ProductType[];
-  setCartItems: React.Dispatch<React.SetStateAction<ProductType[]>>;
   filteredProducts: ProductType[];
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
@@ -17,6 +16,10 @@ interface ShopContextType {
   setPrice: React.Dispatch<React.SetStateAction<number>>;
   orderBy: string;
   setOrderBy: React.Dispatch<React.SetStateAction<string>>;
+  cartItems: CartItem[]; 
+  addToCart: (product: CartItem) => void; 
+  clearCart: () => void; 
+  removeToCart: (productId: number) => void;
 }
 
 interface ProviderProps {
@@ -26,17 +29,21 @@ interface ProviderProps {
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 export const ShopContextProvider = ({ children }: ProviderProps) => {
-  const { error, loading, products } = useFetch(); 
-  const [cartItems, setCartItems] = useState<ProductType[]>([]);
-
-  // Uso del hook `useFilters` para obtener y manejar filtros
-  const { category, orderBy, price, filteredProducts, setCategory, setOrderBy, setPrice } = useFilters(products);
+  const { error, loading, products } = useFetch();
+  const {
+    category,
+    orderBy,
+    price,
+    filteredProducts,
+    setCategory,
+    setOrderBy,
+    setPrice,
+  } = useFilters(products);
+  const { cartItems, addToCart, clearCart, removeToCart } = useCart();
 
   const value = {
     loading,
     error,
-    cartItems,
-    setCartItems,
     filteredProducts,
     category,
     setCategory,
@@ -44,6 +51,10 @@ export const ShopContextProvider = ({ children }: ProviderProps) => {
     setPrice,
     orderBy,
     setOrderBy,
+    cartItems,
+    addToCart, // Aquí el addToCart debe estar bien tipado
+    clearCart,
+    removeToCart,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
@@ -53,7 +64,7 @@ export const useShopContext = (): ShopContextType => {
   const context = useContext(ShopContext);
 
   if (!context) {
-    throw new Error("useShopContext must be used within a ShopContextProvider");
+    throw new Error('useShopContext must be used within a ShopContextProvider');
   }
 
   return context;

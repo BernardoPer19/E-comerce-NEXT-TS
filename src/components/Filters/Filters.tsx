@@ -1,4 +1,3 @@
-'use client';
 
 import SearchForm from './SearchForm';
 import FiltersByCategory from './FiltersByCategory';

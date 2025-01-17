@@ -52,7 +52,7 @@ export const ShopContextProvider = ({ children }: ProviderProps) => {
     orderBy,
     setOrderBy,
     cartItems,
-    addToCart, // Aquí el addToCart debe estar bien tipado
+    addToCart, 
     clearCart,
     removeToCart,
   };

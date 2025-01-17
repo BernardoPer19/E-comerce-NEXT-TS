@@ -15,7 +15,7 @@ export interface ProductType {
     warrantyInformation:  string;
     shippingInformation:  string;
     availabilityStatus:   string;
-    reviews:             Review[]; // Opcional si no siempre hay reseñas
+    reviews:             Review[]; 
     returnPolicy:         string;
     minimumOrderQuantity: number;
     meta:                 Meta;
@@ -34,7 +34,7 @@ export interface Dimensions {
 }
 
 export interface Meta {
-    createdAt: string; // Deja como string si es una fecha ISO
+    createdAt: string; 
     updatedAt: string;
     barcode:   string;
     qrCode:    string;
@@ -43,7 +43,7 @@ export interface Meta {
 export interface Review {
     rating:        number;
     comment:       string;
-    date:          string; // Deja como string si no conviertes directamente a Date
+    date:          string; 
     reviewerName:  string;
     reviewerEmail: string;
 }

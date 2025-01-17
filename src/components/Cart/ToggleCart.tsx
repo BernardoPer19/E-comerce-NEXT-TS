@@ -6,7 +6,7 @@ import CardOfCart from './CardOfCart';
 
 function ToggleCart() {
   const [toggleCart, setToggleCart] = useState(false);
-  const { cartItems, clearCart } = useShopContext(); // Datos del carrito desde el contexto
+  const { cartItems, clearCart } = useShopContext();
   const toggleMenuCart = () => setToggleCart(!toggleCart);
 
   return (
@@ -18,7 +18,7 @@ function ToggleCart() {
         🛒 <span className="ml-1">{cartItems.length}</span>
       </button>
 
-      {/* Carrito desplegable */}
+      
       {toggleCart && (
         <div className="absolute right-0 mt-2 w-[500px] bg-white border shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Tu Carrito</h2>

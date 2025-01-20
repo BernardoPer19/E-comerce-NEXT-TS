@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
-import { ProductType } from '@/types/ProdsTypes'; // Asegúrate de que este tipo esté bien definido
+import { ProductType } from '@/types/ProdsTypes'; 
 import { DetailsProps } from '@/types/CartType';
 
 

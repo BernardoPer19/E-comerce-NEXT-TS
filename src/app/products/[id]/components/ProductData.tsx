@@ -1,8 +1,11 @@
-import { DetailsProps } from '@/types/CartType';
+import { useShopContext } from '@/context/ShopContext';
+import { CartItem, DetailsProps } from '@/types/CartType';
 import React, { JSX } from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 
 function ProductData({ product }: DetailsProps) {
+  const { addToCart } = useShopContext();
+
   const renderStars = (rating: number): JSX.Element[] => {
     const stars: JSX.Element[] = [];
     for (let i = 1; i <= 5; i++) {
@@ -15,6 +18,14 @@ function ProductData({ product }: DetailsProps) {
       );
     }
     return stars;
+  };
+
+  const handleAddToCart = () => {
+    const cartItem: CartItem = {
+      ...product,
+      quantity: 1,
+    };
+    addToCart(cartItem);
   };
 
   return (
@@ -51,7 +62,9 @@ function ProductData({ product }: DetailsProps) {
         </div>
 
         <div className="flex space-x-4 mt-6">
-          <button className="bg-blue-600 text-white py-3 px-6 rounded-xl shadow-lg">
+          <button 
+          onClick={handleAddToCart}
+          className="bg-blue-600 text-white py-3 px-6 rounded-xl shadow-lg">
             Agregar al carrito
           </button>
           <button className="bg-green-600 text-white py-3 px-6 rounded-xl shadow-lg">

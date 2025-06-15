@@ -18,7 +18,7 @@ function Contact() {
           Si tienes alguna pregunta, sugerencia o solicitud, no dudes en ponerte en contacto con nosotros. Estamos siempre listos para ayudarte. Completa el formulario a continuación o visita nuestra tienda física.
         </p>
         
-        {/* Ubicación */}
+  
         <div className="mb-12">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Nuestra Ubicación</h3>
           <p className="text-gray-600 mb-4">
@@ -31,7 +31,6 @@ function Contact() {
           ></iframe>
         </div>
 
-        {/* Formulario de contacto */}
         <div className="max-w-3xl mx-auto">
           <h3 className="text-xl font-semibold text-gray-800 mb-6">Formulario de Contacto</h3>
           <form className="space-y-6">

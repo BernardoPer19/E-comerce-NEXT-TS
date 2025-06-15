@@ -11,17 +11,16 @@ function About() {
         transition={{ duration: 1.5 }}
         className="max-w-7xl mx-auto text-center"
       >
-        {/* Título Principal */}
+       
         <h2 className="text-5xl font-semibold text-gray-800 mb-6">
           Conoce Más Sobre Nosotros
         </h2>
 
-        {/* Descripción de la empresa */}
+    
         <p className="text-lg sm:text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
           En Supermercado XYZ, nos dedicamos a ofrecerte productos frescos, de calidad y accesibles. Desde nuestra fundación, trabajamos para ofrecer una experiencia de compra que se adapte a tus necesidades.
         </p>
 
-        {/* Sección de Imagen y Texto con flexbox */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-12 mb-16">
           {/* Imagen */}
           <div className="flex-1 max-w-md rounded-lg overflow-hidden shadow-xl">
@@ -32,7 +31,7 @@ function About() {
             />
           </div>
 
-          {/* Texto Descriptivo */}
+
           <div className="flex-1 max-w-md">
             <h3 className="text-3xl font-semibold text-gray-800 mb-6">
               ¿Por qué elegirnos?
@@ -50,7 +49,7 @@ function About() {
           </div>
         </div>
 
-        {/* Sección de Testimonios */}
+ 
         <div className="py-16">
           <h3 className="text-4xl font-semibold text-gray-800 text-center mb-10">
             Lo que dicen nuestros clientes
@@ -77,13 +76,13 @@ function About() {
           </div>
         </div>
 
-        {/* Sección de Historia, Misión, Visión y Valores */}
+
         <div className="max-w-7xl mx-auto text-center py-16">
           <h3 className="text-3xl font-semibold text-gray-800 mb-12">
             Nuestra Historia y Valores
           </h3>
           
-          {/* Historia */}
+
           <div className="mb-12">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Nuestra Historia</h4>
             <p className="text-lg text-gray-600">
@@ -91,7 +90,7 @@ function About() {
             </p>
           </div>
 
-          {/* Visión */}
+
           <div className="mb-12">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Nuestra Visión</h4>
             <p className="text-lg text-gray-600">
@@ -99,7 +98,7 @@ function About() {
             </p>
           </div>
 
-          {/* Misión */}
+   
           <div className="mb-12">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Nuestra Misión</h4>
             <p className="text-lg text-gray-600">

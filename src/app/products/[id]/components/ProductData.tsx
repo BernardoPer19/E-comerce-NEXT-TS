@@ -1,3 +1,4 @@
+"use client"
 import { useShopContext } from '@/context/ShopContext';
 import { CartItem, DetailsProps } from '@/types/CartType';
 import React, { JSX } from 'react';

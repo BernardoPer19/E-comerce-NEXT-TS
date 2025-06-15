@@ -41,7 +41,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <Link href={`/products/${product.id}`}>
             <HiSearch size={30} color="#2563eb" />
           </Link>
-          <HiOutlineHeart size={30} color="#ff0000" />
         </div>
       </div>
     </div>

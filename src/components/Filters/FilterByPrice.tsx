@@ -25,7 +25,7 @@ function FilterByPrice() {
             className="w-full mt-1 p-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={price}
           />
-          {`products >= ${price} `}
+          {`products <= ${price} `}
     </div>
   )
 }

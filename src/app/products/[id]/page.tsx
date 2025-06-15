@@ -4,7 +4,6 @@ import Reseñas from './components/Reseñas';
 import Envios from './components/Envios';
 import Especificaciones from './components/Especificaciones';
 import ProductData from './components/ProductData';
-import { JSX } from 'react';
 import ImageProd from './components/ImageProd';
 
 async function getProduct(id: number): Promise<ProductType> {
@@ -17,10 +16,14 @@ async function getProduct(id: number): Promise<ProductType> {
   return res.json();
 }
 
-const ProdPageID = async ({ params }: { params: { id: number } }) => {
-  const { id } = params;
+export default async function ProdPageID({ params }: any) {
+  const idNumber = Number(params.id);
 
-  const product = await getProduct(id);
+  if (isNaN(idNumber)) {
+    throw new Error('Invalid product ID');
+  }
+
+  const product = await getProduct(idNumber);
 
   return (
     <div className="max-w-7xl mx-auto p-8 bg-white rounded-3xl shadow-xl mt-12">
@@ -37,6 +40,4 @@ const ProdPageID = async ({ params }: { params: { id: number } }) => {
       <Reseñas product={product} />
     </div>
   );
-};
-
-export default ProdPageID;
+}
